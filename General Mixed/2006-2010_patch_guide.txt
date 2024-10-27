@@ -1,0 +1,173 @@
+[ ⚠️ This asset is provided by https://github.com/rbxcdn ]
+Guide by Mlaofmd#8192 | This guide works for 2006-2010
+
+
+
+Trust checked:
+
+
+Step 1. Open x32dbg.
+
+Step 2. Drag the RobloxApp.exe.
+
+Step 3. Click Symbols
+
+Step 4. Double Click your client
+
+Step 5. Click the A2 icon
+
+Step 6. Search "trust check failed for %s"
+
+Step 7. Click the first result
+
+Step 8. Scroll up a few (8) lines until you find "jne"
+
+Step 9. Click it.
+
+Step 10. Replace "jne" with "jmp", then click OK or Press enter.
+
+Step 11. Go to References, click second result and patch same.
+
+Step 12. Click File, then click "Patch File". Now you must name the file.
+
+
+
+Names:
+
+
+Step 1. Open x32dbg.
+
+Step 2. Drag the RobloxApp.exe.
+
+Step 3. Click Symbols
+
+Step 4. Double Click your client
+
+Step 5. Click the A2 icon
+
+Step 6. Search "set a Player's name"
+
+Step 7. Click the first result
+
+Step 8. And you see "push 3" or "push 1"
+
+Step 9. Click it.
+
+Step 10. Replace "3" or "1" with "0", then click OK or Press enter.
+
+Step 11. Go to References, click second result and patch same.
+
+Step 12. Click File, then click "Patch File". Now you must name the file.
+
+
+IDs:
+
+
+// If you don't see any results for IDs you may skip this part. //
+
+
+Step 1. Open x32dbg.
+
+Step 2. Drag the RobloxApp.exe.
+
+Step 3. Click Symbols
+
+Step 4. Double Click your client
+
+Step 5. Click the A2 icon
+
+Step 6. Search "set a Player's ID"
+
+Step 7. Click the first result
+
+Step 8. And you see "push 3"
+
+Step 9. Click it.
+
+Step 10. Replace "3" with "0", then click OK or Press enter.
+
+Step 11. Go to References, click second result and patch same.
+
+Step 12. Click File, then click "Patch File". Now you must name the file.
+
+
+Character Names:
+
+
+// If you don't see any results for Character Names you may skip this part. //
+
+
+Step 1. Open x32dbg.
+
+Step 2. Drag the RobloxApp.exe.
+
+Step 3. Click Symbols
+
+Step 4. Double Click your client
+
+Step 5. Click the A2 icon
+
+Step 6. Search "set a Character's name"
+
+Step 7. Click the first result
+
+Step 8. And you see "push 3"
+
+Step 9. Click it.
+
+Step 10. Replace "3" with "0", then click OK or Press enter.
+
+Step 11. Go to References, click second result and patch same.
+
+Step 12. Click File, then click "Patch File". Now you must name the file.
+
+
+
+Join the server:
+
+
+Step 1. Open x32dbg.
+
+Step 2. Drag the RobloxApp.exe.
+
+Step 3. Click Symbols
+
+Step 4. Double Click your client
+
+Step 5. Click the A2 icon
+
+Step 6. Search "connect to an extranet game"
+
+Step 7. Click the first result
+
+Step 8. And you see "push 4"
+
+Step 9. Click it.
+
+Step 10. Replace "4" with "0", then click OK or Press enter.
+
+Step 11. Click File, then click "Patch File". Now you must name the file.
+
+
+
+Assets:
+
+
+Step 1. Open HxD.
+
+Step 2. Drag the RobloxApp.exe.
+
+Step 3. Click Search
+
+Step 4. Click Find
+
+Step 5. Type "roblox.com/asset"
+
+Step 6. Press Enter
+
+Step 7. Replace "roblox.com" with your asset domain (must be 10 characters or less) I recommend replace "roblox.com" with "epicgamers.xyz".
+
+Step 8. Click File, then click Save or Save As. And save file and rename.
+
+
+I hope helped u :P

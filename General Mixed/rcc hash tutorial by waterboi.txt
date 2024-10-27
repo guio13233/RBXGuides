@@ -1,0 +1,30 @@
+how 2 rcc
+https://s3.amazonaws.com/setup.gametest2.robloxlabs.com/version-<version hash>-RCCService<rcc hash>.zip base program
+https://s3.amazonaws.com/setup.gametest2.robloxlabs.com/version-<version hash>-RCC-Roblox<rcc bootstrap hash>.exe bootstraper
+https://s3.amazonaws.com/setup.gametest2.robloxlabs.com/version-<version hash>-RCC-content<rcc content hash>.zip content things
+https://s3.amazonaws.com/setup.gametest2.robloxlabs.com/version-<version hash>-RCC-Libraries<rcc content hash>.zip libraries thingy
+https://s3.amazonaws.com/setup.gametest2.robloxlabs.com/version-<version hash>-RCC-redist<rcc content hash>.zip redist thingy
+https://s3.amazonaws.com/setup.gametest2.robloxlabs.com/version-<version hash>-RCC-shaders<rcc content hash>.zip shaders thingy
+https://s3.amazonaws.com/setup.gametest2.robloxlabs.com/version-<version hash>-RCC-platformcontent-<rcc content hash>.zip platform content thingy
+https://s3.amazonaws.com/setup.gametest2.robloxlabs.com/version-<version hash>-RCC-extracontent-<rcc content hash>.zip extra content thingy
+
+now add all these files to any folder and create AppSettings.xml, it should look like this
+
+<?xml version="1.0" encoding="UTF-8"?>
+<Settings>
+        <ContentFolder>content</ContentFolder>
+        <BaseUrl>http://www.yoursite.xyz/</BaseUrl>
+</Settings>
+
+and u should have a complete rccservice version
+
+rcc hashes & bootstrap & content hash:
+RCCService2AFBA34ACD542E96B3890871CBA18F43 - late 2016 to early 2017 ( i think)
+RCCService5EF3896D702123CA38B3ACF2FBB4EB78 - mid to late 2018
+RCCServiceR7Z9CYTW7WBR95VW - late 2020 to early 2021 
+RCCServiceC134558C4C663041855C887179E44491 - i think mid to late 2017 ????
+RCCService03683f72d1cbb3f87434ffca5afd5db2 - early to mid 2019
+RCC-RobloxA5XGEOZ35LAFQUL2 - 2019 - 2021 i think
+RCC-RobloxAB1FEC8F0BB9C736E1454364EA6D7D38 - 2017 - 2021 (but gone)
+RCC-contentXGTFDE2U040VW06D
+RCC-contentC134558C4C663041855C887179E44491

@@ -1,0 +1,17 @@
+how to fix rcc ip logging
+
+1. open rcc in x32dbg
+2. go to symbols
+3. select ur rcc
+4. az / a2 button
+5. search connection accepted
+6. double click on it
+7. right click -> follow in dump -> rcc.randomnumbersandletters
+8. select search connection accepted.. in dump (the main thing is %s)
+9. press ctrl + e
+10. replace %s to something like no
+11. string search for new connection from
+12. click new connection from %s
+13. do the same thing as with the previous one, %s is the part where the ip is being put
+
+enjoy!!

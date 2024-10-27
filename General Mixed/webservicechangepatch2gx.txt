@@ -1,0 +1,21 @@
+How to change the "Initializing Roblox Web Service" string in RCCService. Patch guide by 2GX.
+
+1. open x32dbg and drop your rccservice.exe or open your rccservice program
+2. go to symbols and double click on your program (rccservice.exe), then right click on the highlighted line
+3. in the dropdown menu, go to search for, current module, and then string references. you will be switched to a new tab called "References", and all the strings from your program begin to load.
+4. search up the string you want to change (eg. Initializing Roblox Web Service).
+5. right click on the string and follow in dump, then current address or program.randomstring
+
+in the dump 1 tab which is at the bottom with the Hex output and beside it is ASCII. highlight the string with your cursor until the end of the string which would be for example:
+
+-highlight starts here- Initializing.Roblox.Web.Service-highlighting stops here
+
+6. do ctrl+e, then at the bottom left corner of the new window that opened, tick (check) the Keep Size option.
+7. in the first input box which its label is ASCII, change it from Initializing Roblox Web Service (not UTF-8, it is ASCII) to whatever you want (eg. Initializing [your private server's name] Web Service).
+8. press enter or press ok at the bottom right corner if you don't have a working keyboard (how would you even do this patch anyways?)
+
+
+
+
+9. press ctrl+p or File -> Patch File (at the top left corner)
+10. patch your file, and try out your finished patched RCC! if it gives you an error as in "this program cannot be run" or something like that (ignoring you wine users), you did something wrong.

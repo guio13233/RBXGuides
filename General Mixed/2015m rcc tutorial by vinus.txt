@@ -1,0 +1,36 @@
+2015M rcc patch guide to make 2015E client join:
+
+First take ur client and open it in hxd, then search for the offset "71F040" then you should see the number 55 in hex tab. you need to replace it with C3 and thats it enjoy ur 2015E client!
+
+Guide made by h6di (Thanks To vanilla for 2015M rcc!)
+2018L+ Mobile Patching Guide By DoggoITA
+1.Decompile apk
+First Edit All Roblox.com to ur domain in smali
+3.edit public key in libroblox.so
+4.compile apk
+5.if you see connection error you prob need v1/setting/application?applicationName=AndroidApp (2018 and some early versions of 2019 use Setting/QuietGet/AndroidApp)
+6.after you setup fflags you should be able to see the landing page with login and signup buttons
+
+endpoints (lazy to add everything)
+v2/login (in 2019M- the response is different 2019L+ uses a response like the current one)
+v2/signup (in 2019M- the response is different 2019L+ uses a response like the current one)
+alerts/alert-info (it show the alert text in 2019L+)
+
+{
+  "IsVisible": true,
+  "Text": "the text you want",
+  "LinkText": "",
+  "LinkUrl": ""
+}
+
+v1/join-game (used by 2020L/M+ it just act like placelauncher)
+--- iOS Roblox Patching Guide ---
+This is for 2016 to be exact
+Download your desired IPA
+Change .IPA -> .zip
+Extract it and open it
+Go into info.plist (you can use vs code or notepad)
+look for roblox.com -> change to 10 character domain of your choice
+save the file and zip it back up
+sideload on your iphone and it should work *assuming you have mobile api
+RBXSigTools  - https://github.com/rbxcdn/rbxsigtools

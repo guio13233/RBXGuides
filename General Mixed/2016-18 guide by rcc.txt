@@ -1,0 +1,81 @@
+Marky warky patch guide 2016/2018 
+
+Bro ok Kamil wtf hello????
+
+For 2016 client we’ll be using 271 because it’s the most popular and has the most content. Generate a key via rbxsigtools then load up HxD, search bgiaa and replace that with your generated public key. Then ctrl + r and replace robloxlabs.com with www.your10char.com and Roblox.com with your10char.com. Then sign your joinscripts by placing the PrivateKey.pem (matches with BGIAA) in the same folder (assuming your joinscript is setup correctly)
+
+Also go to AppSettings.xml and replace roblox.com with your url
+
+RCC:
+There’s not much to do with RCC but go ahead and replace the same URLs. Then go back search ns1,ns2 and ns3 and set these back to roblox.com - this will allow you to run SOAP jobs
+
+Studio:
+Studio is easy just replace URLs and public key to make play solo function, 
+
+Studio APIs that you should know:
+/IDE/
+/IDE/clienttoolbox.ashx
+
+Launch arguments:
+RobloxPlayerBeta.exe -a “www.coolsite.com/Login/Negotiate.ashx” -j “www.coolsite.com/game/join.ashx” -t “ticket”
+
+RCCService.exe -console -verbose -placeid:1818 -port 62489 (forgot default port doesn’t matter though)
+
+Useful info:
+These clients have a a buffer overflow in the function:
+Crypt::verifySignatureBase64 allowing users to crash the server or gain serverside access
+
+Client tickets are also pretty important
+
+Cool site that tells you how stuff works:
+
+https://lrre.wiki/Main_Page
+Main Page
+patching guide by rcc.service (2009 and probably older idk lol also dont use this for any shitvivals cuz its insecure af)
+
+
+-setup
+
+you will need HXD (hex editor) and x32db 
+
+
+-step 1 open the client ur patching with hxd and go to the replace menu and type in roblox.com and your domain and click replace all (the domain needs to be 10chars!)
+oh yeah if ur client has a appsettings.xml and it has roblox.com in it then replace roblox.com with your domain
+
+-step 2 open the client in x32db  let x32db load shit and then go to symbols and then double click ur client (if you dont do this then you cant patch the client)
+
+
+connecting with servers
+-step 3 press the a2 button at the top and let it load and then search for ''connect to an extranet game'' double click it and then you will see push4 (or some other number) click on the thing that says push and press spacebar and then replace the 4 or whatever number is there (ex. push 0x04 to push0x00) and then click ok and close the window
+
+
+failed to get siteurl (fixes stuff idk lol)
+-step 4 go back to the a2 tab and search ''Failed to get Siteurl'' depending on the client you will see 2 or 1 result click on either one and go up 14 lines till you see push again and repeat the thing you did before (repeat it again with the other result if there were 2 results for ''Failed to get Siteurl''
+
+
+player names/ids (you may or may not need to do this idk if you start the client and it says set a players name then you need to)
+-step 5 go to the a2 tab again and search ''set a Player'' you will see about 4 results depending on your client click on them and repeat the thing with push for all results (if you go on one and theres no line with push then go back to the a2 tab and do the other ones)
+
+
+-step 6 press ctrl + p and click save file and then name your file
+
+
+
+
+extra
+
+////
+///
+extra
+
+trustcheck: trustcheck is the thing that makes sure the url is roblox.com or your url getting rid of trustcheck is very insecure and allows the client to load any image from any site (for example porn sites)
+
+open ur client in x32db and go to symbols and double click your client then press the a2 button and search for ''trust check failed for %s'' there should be 1 or 2 results
+scroll up like 8 lines till you see jne click the line that says jne and press spacebar and change the jne to jmp click ok and close the window if theres another result for trust check failed then repeat the process and press ctrl p and press save file
+
+have fun!
+
+if you have any issues please contact rccservice.zip and i'll try to help you
+
+and again DONT USE THIS FOR ANY REVIVALS!!!! 
+feel free to tell me im a retard!

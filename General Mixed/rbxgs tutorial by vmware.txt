@@ -1,0 +1,82 @@
+RBXGS is difficult to use, so here's a simple tutorial on how to use it just like RCCService, and without IIS installed.
+This tutorial is mostly for SoapUI users but you can also use Insomnia.
+
+How to use RBXGS (simple) (iis not required) (ONLY FOR YOUR OWN USE)
+1. you do not need iis at all, just get lessmsi (https://sourceforge.net/projects/lessmsi.mirror/) and extract everything from the installer using it
+2. Download https://github.com/pizzaboxer/rbxgsconhost/releases/tag/v1.1.0
+3. Put it in the RBXGS directory that you just extracted, so "SourceDir"
+4. Go to "CommonAppDataFolder" inside SourceDir, and then go to ROBLOX, and copy the Content folder to the main directory (SourceDir)
+5. Open the file you just downloaded which should be in SourceDir "RBXGSConHost.exe"
+6. Open SoapUI, click on RBXGS Mode, and make sure to make the IP "127.0.0.1:64989" otherwise put something else if you opened the executable with different args.
+7. There. You have RBXGS. 
+
+Note: the args for the executable can be found on the GitHub if you wish to put a different IP or port
+
+Do stuff with RBXGS
+1. Open Environment
+2. Copy the ID listed in the console, something like RBX followed by a long string
+3. Go to "execute" and put the EnvironmentID in the JobID box that appears on SoapUI
+4. You can execute any lua script.
+
+-------------------------------------------------------------------------------------------
+For rendering, if you want to render with a T-Shirt (raw rcc, no website, none of that junk), just put some image in the content folder and then change rbxasset://yourimage.png in the script below to the name of the image you just put in the content folder.
+
+Another note, you can change the body colors by simply changing the number below to the body color number that matches.
+
+--Render Script:
+game.Players:CreateLocalPlayer(0)
+game.Players.LocalPlayer:LoadCharacter()
+wait(1) -- Wait for the character to load
+
+local Player = game.Players.LocalPlayer
+local Character = Player.Character
+
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+
+local Player = game.Players.LocalPlayer
+local Shirt = Instance.new("Shirt")
+Shirt.Graphic = "rbxasset://yourimage.png"
+Shirt.Name = "Shirt"
+Shirt.Parent = Player.Character
+
+Player.Character["Right Arm"].BrickColor = BrickColor.new(125)
+Player.Character["Left Arm"].BrickColor = BrickColor.new(125)
+Player.Character["Head"].BrickColor = BrickColor.new(125)
+Player.Character["Torso"].BrickColor = BrickColor.new(255)
+Player.Character["Right Leg"].BrickColor = BrickColor.new(255)
+Player.Character["Left Leg"].BrickColor = BrickColor.new(255)
+
+print(game:service("ThumbnailGenerator"):click("PNG", 400, 400, true))
+-------------------------------------------------------------------------------------------
+For hosting a game, you should copy your RBXL to the Content folder that you should have copied to the SourceDir directory. Name it anything, and then execute the script below. (Remember you need to change the rbxasset://your_place.rbxl to the same name of the RBXL inside the content folder.
+
+--GameServer script (also compatible with May 2008)
+game:Load("rbxasset://your_place.rbxl")
+Port = 53640 
+Server =  game:GetService("NetworkServer") 
+HostService = game:GetService("RunService")Server:Start(Port,20) 
+game:GetService("RunService"):Run() 
+print("Server started!") 
+function onJoined(NewPlayer) 
+print("New player found: "..NewPlayer.Name.."") 
+NewPlayer:LoadCharacter(true) 
+while wait() do 
+if NewPlayer.Character.Humanoid.Health == 0 then 
+wait(5) 
+NewPlayer:LoadCharacter(true)
+elseif NewPlayer.Character.Parent  == nil then 
+wait(5) 
+NewPlayer:LoadCharacter(true) 
+end 
+end 
+end 
+game.Players.PlayerAdded:connect(onJoined) 
+
+--Note: You should download your client and change the version number to match the same one as your RBXGS. SoapUI allows you to send a request that allows you to view the version. Also, August 2007 is not compatible with any of the RBXGS versions or RCCService versions as of August 9th 2024.
+--Complete Client Archive: https://drive.google.com/drive/folders/1XZpSoJGEsxC2UkKiypm_hIpU2yV4au9q
+-------------------------------------------------------------------------------------------
+
+If you don't know where to find RBXGS versions, you can go in file explorer and put "ftp://ftp.robloxopolis.com" and get some RBXGS versions there, or just find them on archive.org.
+Have fun, and this tutorial is only for your own use and isn't for any projects or anything like that.
+
