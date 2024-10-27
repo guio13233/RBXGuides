@@ -1,0 +1,6 @@
+[ ⚠️ This asset is provided by https://github.com/rbxcdn ]
+guide: how to get client to join studio
+1. String search invalid password
+2. then go ahead and scroll up from invalid password
+3. until you see a JA and then change that to JMP
+4. you are done!!!
