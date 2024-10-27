@@ -1,0 +1,4 @@
+[ ⚠️ This asset is provided by https://github.com/rbxcdn ]
+jmp CryptVerifySignature error
+
+tested on 2019M-2019L (july-september)

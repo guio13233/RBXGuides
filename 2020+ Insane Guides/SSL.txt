@@ -1,0 +1,2 @@
+[ ⚠️ This asset is provided by https://github.com/rbxcdn ]
+patch ssl by jmping CURLOPT_SSL_VERIFYPEER
